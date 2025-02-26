@@ -56,3 +56,7 @@ module.exports.loginUser = async(req, res, next)=>{
         token, message: "you are signed in"
      })
 }
+
+module.exports.profile = async(req, res, next)=>{
+    res.status(200).send(req.user)
+}
