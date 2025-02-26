@@ -6,7 +6,7 @@ const app = express();
 const cors = require("cors")
 const connectToDb = require("./db.js")
 const userRoutes = require("./routes/userRoute.js");
-
+const adminRoutes = require("./routes/adminRoute.js")
 
 connectToDb();
 
@@ -16,5 +16,6 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 app.use("/users",userRoutes )
+app.use("/admins", adminRoutes)
 
 module.exports = app
