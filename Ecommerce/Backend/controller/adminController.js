@@ -56,3 +56,7 @@ module.exports.loginAdmin = async(req, res, next)=>{
         token, message: "you are signed in"
      })
 }
+
+module.exports.adminprofile = async(req, res, next)=>{
+    res.status(200).json(req.admin)
+}
