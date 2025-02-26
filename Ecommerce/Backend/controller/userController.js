@@ -2,7 +2,8 @@ const userModel = require("../models/userModel")
 const userService = require("../service/userService")
 const {validationResult, Result} = require("express-validator")
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken")
+const jwt = require("jsonwebtoken");
+const blackListModel = require("../models/blackListModel");
 
 module.exports.registerUser = async(req, res, next)=>{
 
@@ -57,6 +58,17 @@ module.exports.loginUser = async(req, res, next)=>{
      })
 }
 
-module.exports.profile = async(req, res, next)=>{
+module.exports.getUserProfile = async(req, res, next)=>{
     res.status(200).send(req.user)
+}
+
+module.exports.logoutUser = async(req, res, next)=>{
+    res.clearCookie('token');
+    const token = req.cookies.token || req.headers.authorization?.split(' ')[1]
+
+    await blackListModel.create({token});
+
+    res.status(200).json({
+        message: "logged out"
+    })
 }

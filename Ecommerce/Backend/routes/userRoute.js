@@ -20,6 +20,8 @@ router.post("/login", [
 userController.loginUser
 )
 
-router.get("/profile", auth.authUser, userController.profile )
+router.get("/profile", auth.authUser, userController.getUserProfile )
+
+router.get("/logout", auth.authUser, userController.logoutUser)
 
 module.exports = router
