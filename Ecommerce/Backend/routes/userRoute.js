@@ -10,6 +10,12 @@ router.post("/register",[
 ],
  userController.registerUser
 )
-console.log("user route rergister endpoint fetched")
+
+router.post("/login", [
+    body("email").isEmail().withMessage("Email must be valid"),
+    body("password").isLength({min:6}).withMessage("password must be 6 char long")
+],
+userController.loginUser
+)
 
 module.exports = router
