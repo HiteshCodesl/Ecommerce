@@ -21,7 +21,10 @@ module.exports.updateProducts = async(req, res, next)=>{
         const { productName, description, price, category, productId } = req.body;
 
      const updatedProduct = await productModel.updateOne({
-        _id: productId} , {productName, description, price, category})
+        _id: productId,
+    },{
+        productName, description, price, category
+    })
 
         return res.status(201).json("product updated successfully")
 
