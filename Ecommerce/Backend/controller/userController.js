@@ -63,12 +63,10 @@ module.exports.getUserProfile = async(req, res, next)=>{
 }
 
 module.exports.logoutUser = async(req, res, next)=>{
-    res.clearCookie('token');
-    const token = req.cookies.token || req.headers.authorization?.split(' ')[1]
-
-    await blackListModel.create({token});
-
-    res.status(200).json({
-        message: "logged out"
-    })
+   try{
+    res.status(200).json({message: "logout successfully"})
+   }
+   catch(err){
+    res.status(500).json({message: "server error", err })
+   }
 }
