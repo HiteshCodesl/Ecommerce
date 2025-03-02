@@ -3,7 +3,6 @@ const userService = require("../service/userService")
 const {validationResult, Result} = require("express-validator")
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const blackListModel = require("../models/blackListModel");
 
 module.exports.registerUser = async(req, res, next)=>{
 
