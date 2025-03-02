@@ -21,7 +21,10 @@ const navigate = useNavigate();
 
        <button onClick={logoutUser} className='absolute top-2 right-2 border p-1 border-black justify-end '>Logout</button>
      
+    
      <ProductList popupMsg="successfully added to cart" buttonText="Close"/>
+   
+
      </div>
   )
 }

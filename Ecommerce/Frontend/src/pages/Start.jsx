@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-import Products from "../components/products";
-
+import ProductList from "../components/products";
 function Start() {
   
   return (
@@ -17,8 +16,11 @@ function Start() {
         <p className=" tracking-wider mt-4 ml-2 text-lg font-bold">WELCOME</p>
         <p className="text-sm font-thin ml-2">Log in to Shopify</p>
        </div>
-      
-       <Products popupMsg="Please Log in to add" buttonText="Close" />
+
+
+       <ProductList popupMsg="Please Log in to add" buttonText="Close" />
+   
+
     </div>
     </div>
   )
