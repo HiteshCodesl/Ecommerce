@@ -7,6 +7,8 @@ import Home from './pages/Home'
 import AdminSignup from './pages/AdminSignup'
 import AdminLogin from "./pages/AdminLogin"
 import Start from './pages/Start'
+import Account from './components/Account'
+
 
 function App() {
 return (
@@ -19,6 +21,8 @@ return (
 <Route path='/home' element={<Home />} />
 <Route path='/admin-signup' element={<AdminSignup />}/>
 <Route path='/admin-login' element={<AdminLogin />} />
+<Route path='/account' element={<Account />} />
+
 </Routes>
 
 </div>
