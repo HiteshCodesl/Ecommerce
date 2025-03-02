@@ -10,9 +10,11 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AdminContext>
       <UserContext>
-       <BrowserRouter>
-        <App />
-       </BrowserRouter>
+      
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        
       </UserContext>
     </AdminContext>
   </StrictMode>
