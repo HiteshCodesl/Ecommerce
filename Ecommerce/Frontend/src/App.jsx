@@ -8,11 +8,13 @@ import AdminSignup from './pages/AdminSignup'
 import AdminLogin from "./pages/AdminLogin"
 import Start from './pages/Start'
 import Account from './components/Account'
-
+import Cart from './components/cart'
+import Payment from './components/Payment'
 
 function App() {
 return (
 <div>
+
 
 <Routes>
 <Route path='/' element={<Start />} />
@@ -22,8 +24,10 @@ return (
 <Route path='/admin-signup' element={<AdminSignup />}/>
 <Route path='/admin-login' element={<AdminLogin />} />
 <Route path='/account' element={<Account />} />
-
+<Route path="/cart" element={<Cart />} />
+<Route path='/payment' element={<Payment />} />
 </Routes>
+
 
 </div>
   )
