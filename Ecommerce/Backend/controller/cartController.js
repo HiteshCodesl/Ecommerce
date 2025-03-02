@@ -17,3 +17,15 @@ module.exports.addtoCart = async (req , res , next)=>{
         res.status(400).json({"error while adding to cart": err})
     } 
 }
+
+module.exports.getCart = async(req, res , next)=>{
+try{
+    const Products = await cartModel.find({});
+    
+    res.status(200).json(Products)
+}catch(err){
+
+    res.status(400).json({"error while get cartProduct": err})
+}
+
+}
