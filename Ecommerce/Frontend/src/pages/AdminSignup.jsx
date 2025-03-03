@@ -25,7 +25,7 @@ function AdminSignup() {
         const data = response.data;
         setAdmin(data.admin) 
         localStorage.setItem("token", data.token)
-        navigate("/home")
+        navigate("/admin-home")
     }
 setEmail("")
 setPassword("")
@@ -58,7 +58,7 @@ setUsername("")
 </div>
 
 </form>
-<div className='font-medium text-base gap-2 flex justify-end m-3'>Already User? <Link to={'/admin-login'} className='underline underline-offset-4 text-blue-900'>Login</Link></div>
+<div className='font-medium text-base gap-2 flex justify-end m-3'>Already Admin? <Link to={'/admin-login'} className='underline underline-offset-4 text-blue-900'>Login</Link></div>
 </div>
 
 </div>

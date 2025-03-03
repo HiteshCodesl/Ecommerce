@@ -24,7 +24,7 @@ import axios from 'axios';
       const data  = response.data;
       setAdmin(data.admin);
       localStorage.setItem("token", data.token)
-      navigate("/home")
+      navigate("/admin-home")
     }
 
   setEmail("");
@@ -54,7 +54,7 @@ import axios from 'axios';
   </div>
   </form>
 
-  <div className='font-medium gap-1 text-base flex justify-end m-3'>New User?<Link to={"/admin-signup"} className='underline underline-offset-4 text-blue-900'>Signup</Link></div>
+  <div className='font-medium gap-1 text-base flex justify-end m-3'>New Admin?<Link to={"/admin-signup"} className='underline underline-offset-4 text-blue-900'>Signup</Link></div>
 
 </div>
 
