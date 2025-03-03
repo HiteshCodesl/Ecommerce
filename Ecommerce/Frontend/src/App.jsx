@@ -6,6 +6,7 @@ import SignupUser from './pages/SignupUser'
 import Home from './pages/Home'
 import AdminSignup from './pages/AdminSignup'
 import AdminLogin from "./pages/AdminLogin"
+import AdminHome from './pages/AdminHome'
 import Start from './pages/Start'
 import Account from './components/Account'
 import Cart from './components/cart'
@@ -23,6 +24,7 @@ return (
 <Route path='/home' element={<Home />} />
 <Route path='/admin-signup' element={<AdminSignup />}/>
 <Route path='/admin-login' element={<AdminLogin />} />
+<Route path='/admin-home' element={<AdminHome />} />
 <Route path='/account' element={<Account />} />
 <Route path="/cart" element={<Cart />} />
 <Route path='/payment' element={<Payment />} />
