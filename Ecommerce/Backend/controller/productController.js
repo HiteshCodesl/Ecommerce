@@ -3,10 +3,10 @@ const productService = require("../service/productService")
 
 module.exports.addProduct = async (req, res, next)=>{
     try{
-        const { productName, description, price, category } = req.body;
+        const {name, price, category, image } = req.body;
 
         const product = await productService.createProduct({
-            productName, description, price, category
+            name, price, category, image
         })
     
         return res.status(201).json("successfully added the product")
@@ -16,14 +16,15 @@ module.exports.addProduct = async (req, res, next)=>{
     }
 }
 
+
 module.exports.updateProducts = async(req, res, next)=>{
     try{
-        const { productName, description, price, category, productId } = req.body;
+        const { name, image, price, category, productId } = req.body;
 
      const updatedProduct = await productModel.updateOne({
         _id: productId,
     },{
-        productName, description, price, category
+        name, image, price, category
     })
 
         return res.status(201).json("product updated successfully")

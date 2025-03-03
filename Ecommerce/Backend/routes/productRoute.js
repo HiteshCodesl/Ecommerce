@@ -6,9 +6,9 @@ const auth = require("../middleware/auth");
 
 
 router.post("/addProduct",[
-    body("productName").isLength({min: 2}).withMessage("product name must be valid"),
-    body("description").isLength({min: 2}).withMessage("description must be provided"),
-    body("price").isNumeric({min:1 }).withMessage("price must be in numbers"),
+    body("image").isLength({min: 2}).withMessage("image must be valid"),
+    body("name").isLength({min: 2}).withMessage("product name must be valid"),
+    body("price").isLength({min: 2}).withMessage("price must be valid"),
     body("category").isLength({min:2}).withMessage("category must be defined")
 ], 
 auth.authAdmin, productController.addProduct
@@ -17,7 +17,7 @@ auth.authAdmin, productController.addProduct
 router.put("/updateProducts", [
     body("productName").isLength({min: 2}).withMessage("product name must be valid"),
     body("description").isLength({min: 2}).withMessage("description must be provided"),
-    body("price").isNumeric({min:1 }).withMessage("price must be in numbers"),
+    body("price"),
     body("category").isLength({min:2}).withMessage("category must be defined")
 ],
 auth.authAdmin, productController.updateProducts
