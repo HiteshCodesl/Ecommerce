@@ -29,7 +29,6 @@ export default function ProductList({popupMsg, buttonText}){
         "Authorization" : `Bearer ${localStorage.getItem("token")}`,
         "Content-Type": "application/json"
       }
-    
      }
     )
    
@@ -44,7 +43,6 @@ export default function ProductList({popupMsg, buttonText}){
 
     return(
         <div className="grid grid-cols-2 grid-flow-row gap-4 h-auto w-auto px-6 mx-auto ">
-        
 
         {products.map((product)=>(
        <div key={product.productId} className="p-4 flex flex-col items-center text-center">
