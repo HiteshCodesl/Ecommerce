@@ -62,7 +62,7 @@ submitHandler(e)
 
 <div className='font-medium text-base gap-2 flex justify-end m-3'>Already User? <Link to={"/login"} className='underline underline-offset-4 text-blue-900'>Login</Link></div>
 
-<Link to={'/admin-signup'} className='w-[50vw] mx-auto px-7 text-white bg-black py-3 mt-9'>Log in as Captain</Link>
+<Link to={'/admin-signup'} className=' flex justify-center w-[70vw] mx-auto px-7 text-white bg-black text-nowrap py-3 mt-9'>Log in as Captain</Link>
 
 </div>
 
