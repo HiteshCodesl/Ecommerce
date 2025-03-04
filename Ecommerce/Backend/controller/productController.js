@@ -3,10 +3,10 @@ const productService = require("../service/productService")
 
 module.exports.addProduct = async (req, res, next)=>{
     try{
-        const {name, price, category, image } = req.body;
+        const {productId, name, price, category, image } = req.body;
 
         const product = await productService.createProduct({
-            name, price, category, image
+            name, price, category, image, productId
         })
     
         return res.status(201).json("successfully added the product")
