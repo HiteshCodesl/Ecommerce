@@ -6,7 +6,6 @@ module.exports.createProduct = async({
     if(!productId || !name  || !price || !category || !image){
         throw new Error("all fields are required")
     }
-
     const product = await productModel.create({
         productId, name, price, category, image
     })
