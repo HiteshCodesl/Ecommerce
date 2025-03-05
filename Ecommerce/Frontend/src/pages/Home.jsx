@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
-import ProductList from "../components/products"
+import { useContext } from 'react';
+import { FetchedProductsContext } from "../context/productContext"
+import AddToCart from "../components/products"
 
 function Home() {
   const [isopen, setIsOpen] = useState(false)
-  
+  const {fetchProducts} = useContext(FetchedProductsContext)
 const navigate = useNavigate();
 
  function logoutUser(){
@@ -21,10 +23,7 @@ const navigate = useNavigate();
 
        <button onClick={logoutUser} className='absolute top-2 right-2 border p-1 border-black justify-end '>Logout</button>
      
-    
-     <ProductList popupMsg="successfully added to cart" buttonText="Close"/>
-   
-
+     <AddToCart popupMsg="successfully added to cart" buttonText="Close"/>
      </div>
   )
 }

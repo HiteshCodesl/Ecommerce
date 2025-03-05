@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
-import {ProductContext} from "../context/productContext"
+import {FetchedProductsContext} from "../context/productContext"
 
-export default function ProductList({popupMsg, buttonText}){
+export default function AddToCart({popupMsg, buttonText}){
     const [isOpen, setIsOpen] = useState(false);
-    const { products } = useContext(ProductContext) || { products: [] }; // Prevents undefined errors
-
+    const { fetchProducts } = useContext(FetchedProductsContext) 
+    
     useEffect(()=>{
       if(isOpen){
           document.body.style.overflow = "hidden"
@@ -44,11 +44,11 @@ export default function ProductList({popupMsg, buttonText}){
     return(
         <div className="grid grid-cols-2 grid-flow-row gap-4 h-auto w-auto px-6 mx-auto ">
 
-        {products.map((product)=>(
+        {fetchProducts.map((product)=>(
        <div key={product.productId} className="p-4 flex flex-col items-center text-center">
         <img className="w-[100%] h-[100%] object-cover" src={product.image} alt={product.name} />
         <div>{product.name}</div>
-        <p className="font-semibold text-xl">{product.price}</p>
+        <p className="font-semibold text-xl">{`₹${product.price}`}</p>
         <div className="text-lg font-medium">{product.category}</div>
         <button onClick={()=>{
           handleClick();

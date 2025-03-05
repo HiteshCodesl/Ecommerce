@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-import ProductList from "../components/products";
+import AddToCart from "../components/products";
 function Start() {
   
   return (
@@ -18,7 +18,7 @@ function Start() {
        </div>
 
 
-       <ProductList popupMsg="Please Log in to add" buttonText="Close" />
+       <AddToCart popupMsg="Please Log in to add" buttonText="Close" />
    
 
     </div>

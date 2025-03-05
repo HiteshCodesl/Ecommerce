@@ -21,7 +21,9 @@ const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/products/add
     "Authorization" : `Bearer ${localStorage.getItem("token")}`,
     "Content-Type": "application/json"
   }
-})
+},
+alert("product added")
+)
 
 
 setImage('')
