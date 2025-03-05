@@ -2,11 +2,14 @@ const productModel = require("../models/productsModel")
 const productService = require("../service/productService")
 
 module.exports.addProduct = async (req, res, next)=>{
+    const lastProduct = await productModel.findOne().sort({productId: -1}); 
+    const newProductId = lastProduct ? lastProduct.productId + 1 : 1;
     try{
-        const {productId, name, price, category, image } = req.body;
-
+        const { name, price, category, image } = req.body;
+ 
+        
         const product = await productService.createProduct({
-            name, price, category, image, productId
+            name, price, category, image, productId:newProductId
         })
     
         return res.status(201).json("successfully added the product")
