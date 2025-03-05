@@ -65,8 +65,6 @@ submitHandler(e)
 <Link to={'/admin-signup'} className=' flex justify-center w-[70vw] mx-auto px-7 text-white bg-black text-nowrap py-3 mt-9'>Log in as Captain</Link>
 
 </div>
-
-
 </div>
 
   )
